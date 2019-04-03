@@ -1,0 +1,14 @@
+plugins {
+    id 'com.github.sherter.google-java-format' version '0.8'
+}
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+
