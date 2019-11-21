@@ -8,17 +8,23 @@ public class HelloWorld {
     Greeter greeter = new Greeter();
     System.out.println(greeter.sayHello());
 
-      List<String> fruits = new ArrayList<>();
-      fruits.add("Apple");
-      fruits.add("Banana");
-      fruits.add("Pear");
-      fruits.add("Orange");
-      fruits.add("Blueberry");
+    List<String> fruits = new ArrayList<>();
+    fruits.add("Apple");
+    fruits.add("Banana");
+    fruits.add("Pear");
+    fruits.add("Orange");
+    fruits.add("Blueberry");
 
-      fruits
-              .stream()
-              .filter(fruit ->
-                      fruit.contains("a"))
-              .forEach(System.out::println);
+    fruits
+        .stream()
+        .filter(
+            fruit -> {
+              return fruit.contains("a");
+            })
+        .forEach(System.out::println);
+  }
+
+  private void doStuff() {
+    System.out.println("This method is never called");
   }
 }
