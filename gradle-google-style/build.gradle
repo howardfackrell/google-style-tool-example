@@ -1,8 +1,20 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.owasp:dependency-check-gradle:5.2.1'
+    }
+}
+
 plugins {
     id 'com.github.sherter.google-java-format' version '0.8'
+    id 'pmd'
 }
 
 apply plugin: 'java'
+apply plugin: 'org.owasp.dependencycheck'
+
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -11,4 +23,14 @@ repositories {
     mavenCentral()
 }
 
+dependencies {
+    implementation 'org.springframework:spring-core:3.2.18.RELEASE'
+}
 
+
+
+
+// run pmd check       gradle check
+// run owasp check     gradle dependencyCheckAnalyze --info
+// run google format   gradle goJF
+// run google check    gradle verGJF
